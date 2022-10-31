@@ -1,0 +1,263 @@
+:root {
+  --bgColor: #f1f5f8;
+  --colorLegend: #102a42;
+  /* --underlineColor: #49a6e9; */
+  --focusColor: #1DA1F2;
+  --colorSuccess: #28a745;
+  --colorDanger: #dc3545;
+}
+
+/**********/
+/* RESETS */
+/**********/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--bgColor);
+}
+
+fieldset {
+  border: none;
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 60vw;
+  }
+}
+
+/**************/
+/* UTILIDADES */
+/**************/
+.capitalize {
+  text-transform: capitalize;
+}
+
+/**************/
+/* FORMULARIO */
+/**************/
+.form {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: auto auto 20rem; */
+    column-gap: 2rem;
+  }
+}
+
+section h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  /* text-transform: capitalize; */
+  font-weight: bold;
+  color: var(--colorLegend);
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  section h2 {
+    margin-top: 7rem;
+  }
+}
+
+.form__container {
+  margin-bottom: 1.7rem;
+}
+
+@media (min-width: 768px) {
+  .form__container:nth-child(7) {
+    grid-column: 1 / 3;
+  }
+}
+
+.form__label {
+  display: block;
+  /* text-transform: capitalize; */
+  font-weight: 700;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.form__container-input {
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  height: 43px;
+  border: 3px solid transparent;
+  border-radius: 3px;
+  line-height: 40px;
+  padding: 0 40px 0 10px;
+  transition: all .3s ease;
+}
+.form__input:focus {
+  border: 3px solid var(--focusColor);
+  outline: none;
+  box-shadow: 3px 0 30px rgba(163, 163, 163, 0.5);
+}
+
+.form__input::placeholder {
+  opacity: .5;
+}
+
+.form__icon {
+ font-size: 20px;
+}
+
+.form__validation-state {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.form__input-error {
+  display: none;
+  font-size: 1.2rem;
+}
+.form__input-error--active {
+  display: block;
+}
+
+.terms-text {
+  font-size: 1.3rem;
+}
+
+.form__checkbox {
+  margin-right: 1rem;
+}
+
+.form__warning {
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 3px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .form__warning {
+    grid-column: 1 / 3;
+  }
+}
+
+.form__warning p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__warning-icon {
+  margin-right: 3px;
+  /* font-size: 30px; */
+  width: 30px;
+  fill: #fff;
+}
+
+.form__warning--active {
+  display: block;
+}
+
+/* BOTÓN */
+.form__btn-enviar {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+@media (min-width: 768px) {
+  .form__btn-enviar{
+    grid-column: 1 / 3;
+    align-items: center;
+ 
+  }
+}
+
+.form__btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: #222;
+  padding: 1.5rem 0.75rem;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  transition: color 0.3s linear,
+              background 0.3s linear;
+  font-size: 1.5rem;
+  border: 2px solid #222;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .form__btn {
+    padding: .5rem .75rem;
+  }
+}
+
+.form__btn:hover {
+  color: #fff;
+  background: #222;
+}
+
+.form__success {
+  text-align: center;
+  font-size: 1.4rem;
+  display: none;
+  background-color: var(--colorSuccess);;
+  color: #fff;
+}
+
+.form__success--active {
+  display: block;
+}
+
+.form__container-success
+.form__validation-state {
+  color: var(--colorSuccess);
+  opacity: 1;
+}
+
+.form__container-danger
+.form__label {
+  color: var(--colorDanger);
+}
+
+.form__container-danger
+.form__validation-state {
+  color: var(--colorDanger);
+  opacity: 1;
+}
+
+.form__container-danger
+.form__input {
+  border: 3px solid var(--colorDanger);
+}
+
