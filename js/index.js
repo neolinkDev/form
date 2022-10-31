@@ -88,7 +88,8 @@ const validatePasswords = () => {
   const inputPassword1 = d.getElementById('password').value,
         inputPassword2 = d.getElementById('password2').value;
 
-  if( inputPassword1 !== inputPassword2 ){
+  // 
+  if( inputPassword1 !== inputPassword2 || !inputPassword2.match( expresions.password )){
     d.getElementById('password2-container').classList.add('form__container-danger');
     d.getElementById('password2-container').classList.remove('form__container-success');
     d.querySelector('#password2-container ion-icon').setAttribute('name','close-outline');
@@ -100,7 +101,8 @@ const validatePasswords = () => {
     d.querySelector('#password2-container ion-icon').setAttribute('name','checkmark-outline');
     d.querySelector('#password2-container .form__input-error').classList.remove('form__input-error--active');
     inputsObject['password'] = true;
-  }
+  }    
+
 }
 
 // fn que válida el formulario
