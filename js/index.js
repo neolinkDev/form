@@ -12,7 +12,7 @@ const $inputs = d.querySelectorAll('#form input');
 const expresions = {
 	usuario: /^[A-Za-z][A-Za-z0-9_]{3,15}$/, // Letras, números, guión bajo
 	password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\.])[A-Za-z\d@$!%*#?&\.]{8,12}$/, // 8 a 12 caracteres.
-	nombre: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, // Letras, espacios y pueden llevar acentos.
+	nombre: /^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]{3,39}$/, // Letras, espacios y pueden llevar acentos.
 	email: /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/,
 	phone: /^\d{10}$/ // 10 números.
 }
